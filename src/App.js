@@ -1,23 +1,53 @@
-import logo from './logo.svg';
+import { useEffect, useRef, useState } from 'react';
 import './App.css';
+import HorizontalSlider from './components/HorizontalSlider';
+import Navbar from './layout/Navbar';
+import Hero from './components/Hero';
+
 
 function App() {
+  
+  // useGSAP(() => {
+    
+    //   gsap.to(sections, {
+      //     xPercent: -100 * (sections.length-1),
+      //     ease: "none",
+      //     scrollTrigger: {
+  //       trigger: container,
+  //       start: "bottom center",
+  //       markers: true,
+  //     },
+  //   })
+  
+  // }, {scope: container, revertOnUpdate: true})
+  
+  const container1Ref = useRef();
+  const container2Ref = useRef();
+
+  const [pageLoaded, setPageLoaded] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar/>
+      <Hero/>
+      <div className="w-[100vw] h-[60vh] font-bold tracking-widest text-6xl flex justify-center items-center">
+        <h1>SCROLL DOWN</h1>
+      </div>
+      <div className="w-[100vw] h-[60vh] font-bold tracking-widest text-6xl flex justify-center items-center">
+        <h1>SCROLL DOWN</h1>
+      </div>
+
+      <HorizontalSlider ref = {container1Ref}/>
+
+      <div className="w-[100vw] h-[60vh] font-bold tracking-widest text-6xl flex justify-center items-center">
+        <h1>SCROLL DOWN</h1>
+      </div>
+      <div className="w-[100vw] h-[60vh] font-bold tracking-widest text-6xl flex justify-center items-center">
+        <h1>SCROLL DOWN</h1>
+      </div>
+      <div className="w-[100vw] h-[60vh] font-bold tracking-widest text-6xl flex justify-center items-center">
+        <h1>SCROLL DOWN</h1>
+      </div>
     </div>
   );
 }

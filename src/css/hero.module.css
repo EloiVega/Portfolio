@@ -1,0 +1,33 @@
+.mainContainer{
+    top: 0;
+    left: 0;
+    background-image: radial-gradient(circle, rgba(252,252,252,1) 0%, rgba(199,199,199,1) 100%);;
+    background-position: center top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.mainContainer:before{
+    content: "";
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    background-image: url('../assets/hero.png');   
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    filter: sepia(0.1) grayscale(0.3);
+}
+
+.mainContainer:after{
+    content: "";
+
+    width: 100%;
+    height: 100%;
+
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+}
