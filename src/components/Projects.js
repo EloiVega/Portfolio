@@ -52,7 +52,7 @@ const cards = [
 const Projects = () => {
   return (
     <div id = "projects" className='m-auto mt-40 xl:w-screen w-screen xl:w-[80vw] flex flex-col items-center h-auto text-white blue'>
-        <h1 id = "projects-Title" className = "text-6xl text-outline">PROJECTS</h1>
+        <h1 id = "projects-title" className = "text-6xl text-outline">PROJECTS</h1>
         <ProjectCard cardData = {cards[0]} id = "project1"/>
         <ProjectCard cardData = {cards[1]} id = "project2" reverse = {true}/>
         <ProjectCard cardData = {cards[2]} id = "project3"/>

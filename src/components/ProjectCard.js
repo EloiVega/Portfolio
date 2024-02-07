@@ -3,7 +3,7 @@ import styles from '../css/about.module.css';
 
 const ProjectCard = ({id, reverse, cardData}) => {
   let cardClasses = {
-    basic: "m-auto mb-64 pt-40 flex w-full md:w-[80vw] h-[80vh] justify-evenly items-center flex-col gap-4 xl:gap-0 text-center",
+    basic: "m-auto mb-64 pt-40 flex w-[95vw] md:w-[80vw] h-[100vh] md:h-[80vh] justify-center md:justify-evenly items-center flex-col gap-8 xl:gap-0 text-center",
     flexDirection: !reverse? "xl:flex-row" : "xl:flex-row-reverse",
     colorTheme: cardData.colorTheme? cardData.colorTheme: "",
       };
@@ -34,7 +34,7 @@ const ProjectCard = ({id, reverse, cardData}) => {
         </div>
 
         {/* CONTENT */}
-        <div className="flex flex-col justify-center items-center font-bold h-96 w-full xl:min-w-[600px] xl:w-1/2">
+        <div className="flex flex-col justify-center items-center font-bold w-full xl:min-w-[600px] xl:w-1/2">
           {cardData.title && 
             <h1 id = {`${id}-title`} className="z-10 text-4xl md:text-5xl tracking-wider mb-4 text-outline">
               {cardData.title}
@@ -58,7 +58,7 @@ const ProjectCard = ({id, reverse, cardData}) => {
         </div>
         <div id = {`${id}-img`} className = "relative z-10 w-[350px] md:min-w-[450px] xl:min-w-[600px] min-h-[200px] md:h-96 bg-dark-color flex flex-col justify-end rounded-xl border-4 border-solid border-sky-700">
             <img id = "img1" alt = "picture that discribes the description" src = {cardData.image} className='w-full h-full'></img>
-            <img id = "img2" alt = "picture that discribes the description" src = {cardData.mobileImage} className={`w-[75px] md:w-[150px] h-[150px] md:h-[275px] border-solid border-2 rounded-lg absolute ${reverse? "-left-2 md:-left-8" :"-right-2 md:-right-8"} -bottom-4`}></img>
+            <img id = "img2" alt = "picture that discribes the description" src = {cardData.mobileImage} className={`w-[75px] md:w-[100px] xl:w-[150px] h-[150px] md:h-[200px] xl:h-[275px] border-solid border-2 rounded-lg absolute ${reverse? "-left-2 md:-left-8" :"-right-2 md:-right-8"} -bottom-4`}></img>
         </div>
     </div>
   )
