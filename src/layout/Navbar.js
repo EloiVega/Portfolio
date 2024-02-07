@@ -11,16 +11,16 @@ const Navbar = () => {
         </div> */}
         <div id = "nav-list" className = "text-white tracking-widest grow">
           <ul className="flex justify-center text-sm sm:text-xl font-bold gap-6 sm:gap-14">
-            <li>
+            <li id = "aboutLink">
               <a href = "#about">About</a>
             </li>
-            <li>
+            <li id = "skillsLink">
               <a href = "#skills">Skills</a>
             </li>
-            <li>
+            <li id = "projectsLink">
               <a href = "#projects">Projects</a>
             </li>
-            <li>
+            <li id = "contactLink">
               <a href = "#contact-me">Contact Me</a>
             </li>
           </ul>
