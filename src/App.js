@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import "./utils/animations"
 import Projects from './components/Projects';
+import Skills from './components/Skills';
 
 function App() {
   
@@ -33,6 +34,7 @@ function App() {
       <Navbar/>
       <Hero/>
       <Projects/>
+      <Skills/>
       <div className="w-[100vw] h-[60vh] font-bold tracking-widest text-6xl flex justify-center items-center">
         <h1>SCROLL DOWN</h1>
       </div>

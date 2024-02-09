@@ -1,5 +1,5 @@
-import { gsap } from "gsap";
-    
+import { technicalSkills, softSkills } from "./skillsData";
+import { gsap } from "gsap";    
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -34,7 +34,6 @@ setTimeout(()=>{
     navLinksTimeline.fromTo("#contactLink", {y:-60}, {y: 0, duration:0.1})
     
     /* ----- PROJECTS SECTION ANIMATIONS ----- */
-
     gsap.fromTo("#projects-title", { y: 50, autoAlpha: 0}, {
         y: -100,
         autoAlpha: 1,
@@ -68,6 +67,37 @@ setTimeout(()=>{
         const isReverse = (index%2 == 1);
         assignProjectBackgroundAnimations(projectId, projectBackgroundTimeline, isReverse);
         assignProjectAnimations(projectId, projectTimeline, isReverse);
+    })
+
+    /* ----- SKILLS SECTION ANIMATIONS ----- */
+    gsap.fromTo("#skills-title", { y: -50, autoAlpha: 0}, {
+        y: -100,
+        autoAlpha: 1,
+        scrollTrigger: {
+            trigger: "#skills-title",
+            start: "top 80%",
+            end: "top: 50%",
+            scrub: true,
+        }
+    })
+
+    technicalSkills.forEach(skill => {
+        gsap.fromTo(`#${skill.id} #progress-fill`, {width: 0}, {
+            width:`${skill.progress}%`, duration: 1,
+            scrollTrigger: {
+                trigger: "#skills",
+                start: "top 60%",
+            }
+        })
+    })
+    softSkills.forEach(skill => {
+        gsap.fromTo(`#${skill.id} #progress-fill`, {width: 0}, {
+            width:`${skill.progress}%`, duration: 1,
+            scrollTrigger: {
+                trigger: "#skills",
+                start: "top 60%",
+            }
+        })
     })
 
 }, 100);
