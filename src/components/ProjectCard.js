@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import styles from '../css/about.module.css';
 
 const ProjectCard = ({id, reverse, cardData}) => {
   let cardClasses = {

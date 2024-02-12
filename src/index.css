@@ -12,8 +12,8 @@
 --yellow-color: #eed636;
 --green-faded-color: #36ca36db;
 --green-color: #36ca36;
---orange-faded-color: #cc8c17d9;
---orange-color: #cc8c17;
+--orange-faded-color: #f58639e0;
+--orange-color: #f97316ed;
 }
 
 html{
@@ -37,6 +37,41 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--darker-color);
+}
+
+
+.overflow-y-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+.overflow-y-scroll::-webkit-scrollbar-track {
+  background: var(--darker-color); 
+  border-radius: 10px;
+}
+.overflow-y-scroll::-webkit-scrollbar-thumb {
+  border-radius:10px;
+}
+.overflow-y-scroll::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+} 
+
+.scroll-yellow::-webkit-scrollbar-thumb{
+  background: var(--yellow-color); 
+}
+.scroll-blue::-webkit-scrollbar-thumb{
+  background: var(--blue-color); 
+}
+.scroll-lightblue::-webkit-scrollbar-thumb{
+  background: var(--lightblue-color); 
+}
+.scroll-green::-webkit-scrollbar-thumb{
+  background: var(--green-color); 
+}
+.scroll-orange::-webkit-scrollbar-thumb{
+  background: var(--orange-color); 
+}
+
+.outer::-webkit-scrollbar{
+  visibility: hidden;
 }
 
 code {

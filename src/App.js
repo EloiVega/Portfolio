@@ -1,12 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
-import HorizontalSlider from './components/HorizontalSlider';
 import Navbar from './layout/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import "./utils/animations"
 import Projects from './components/Projects';
-import Skills from './components/Skills';
+import Accomplishments from './components/Accomplishments';
 
 function App() {
   
@@ -24,34 +23,17 @@ function App() {
   
   // }, {scope: container, revertOnUpdate: true})
   
-  const container1Ref = useRef();
-  const container2Ref = useRef();
-
-  const [pageLoaded, setPageLoaded] = useState(false);
-
+  const [closedModal, setClosedModal] = useState(true);
   return (
     <div>
       <Navbar/>
       <Hero/>
       <Projects/>
-      <Skills/>
-      <div className="w-[100vw] h-[60vh] font-bold tracking-widest text-6xl flex justify-center items-center">
-        <h1>SCROLL DOWN</h1>
-      </div>
-      <div className="w-[100vw] h-[60vh] font-bold tracking-widest text-6xl flex justify-center items-center">
-        <h1>SCROLL DOWN</h1>
-      </div>
-
-      <HorizontalSlider id = "a" ref = {container1Ref}/>
-
-      <div className="w-[100vw] h-[60vh] font-bold tracking-widest text-6xl flex justify-center items-center">
-        <h1>SCROLL DOWN</h1>
-      </div>
-      <div className="w-[100vw] h-[60vh] font-bold tracking-widest text-6xl flex justify-center items-center">
-        <h1>SCROLL DOWN</h1>
-      </div>
-      <div className="w-[100vw] h-[60vh] font-bold tracking-widest text-6xl flex justify-center items-center">
-        <h1>SCROLL DOWN</h1>
+      <About closedModal = {closedModal} setClosedModal={setClosedModal}/>
+      <Accomplishments/>
+      <div id="farewell" className="w-screen orange flex flex-col justify-center items-center gap-10 bg-dark-color h-[50vh] text-5xl font-bold">
+        <h1 className = "text-[var(--orange-color)]">Thanks for visiting my websites</h1>
+        <span className = "text-transparent bg-clip-text bg-gradient-to-r from-[var(--orange-color)] to-gray-200">Stay Awesome!</span>
       </div>
     </div>
   );

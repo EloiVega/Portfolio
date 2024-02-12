@@ -4,10 +4,11 @@ import { technicalSkills, softSkills } from '../utils/skillsData'
 
 const Skills = () => {
   return (
-    <div id = "skills">
-        <div className="h-full flex flex-col gap-4 pt-4 px-5 md:px-20">
+    <div id = "skills" className = "h-full md:h-[350px] xl:h-5/6 w-full xl:w-7/12 yellow relative">
+        <h2 id = "skills-title" className="text-outline text-3xl absolute top-4 xl:top-0 left-4 tracking-wider">Skills</h2>
+        <div className="h-full w-full flex flex-col flex-wrap gap-4 pt-16 xl:pt-12 px-5 xl:px-20 rounded-lg md:rounded-xl border-solid border-t-2 xl:border-t-0 xl:border-l-2">
             {technicalSkills.length > 0 &&
-                technicalSkills.map(skill => <Skill skillData = {skill} colorTheme={"yellow"}/>)
+                technicalSkills.map(skill => <Skill key = {skill.id} skillData = {skill} colorTheme={"yellow"}/>)
             }
         </div>
     </div>

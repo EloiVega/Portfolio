@@ -70,11 +70,11 @@ setTimeout(()=>{
     })
 
     /* ----- SKILLS SECTION ANIMATIONS ----- */
-    gsap.fromTo("#skills-title", { y: -50, autoAlpha: 0}, {
-        y: -100,
+    gsap.fromTo("#about-title", { y: 0, autoAlpha: 0}, {
+        y: -50,
         autoAlpha: 1,
         scrollTrigger: {
-            trigger: "#skills-title",
+            trigger: "#about-title",
             start: "top 80%",
             end: "top: 50%",
             scrub: true,
@@ -86,16 +86,8 @@ setTimeout(()=>{
             width:`${skill.progress}%`, duration: 1,
             scrollTrigger: {
                 trigger: "#skills",
-                start: "top 60%",
-            }
-        })
-    })
-    softSkills.forEach(skill => {
-        gsap.fromTo(`#${skill.id} #progress-fill`, {width: 0}, {
-            width:`${skill.progress}%`, duration: 1,
-            scrollTrigger: {
-                trigger: "#skills",
-                start: "top 60%",
+                start: "top 80%",
+                toggleActions: "play reverse play reverse",
             }
         })
     })
