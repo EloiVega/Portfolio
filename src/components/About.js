@@ -49,7 +49,7 @@ const myStorySummary = `
     of one of the best Trio in problem solving in the Arab/Africa region...
 `
 
-const About = ({closedModal, setClosedModal}) => {
+const About = ({openModal, closeModal}) => {
   return (
     <div id = "about" className='w-screen mt-[400px] h-auto py-20 xl:py-0 xl:h-[800px] bg-dark-color flex flex-col justify-center items-center gap-4 yellow'>
         <h1 id = "about-title" className = "text-5xl text-outline">ABOUT ME</h1>
@@ -58,13 +58,11 @@ const About = ({closedModal, setClosedModal}) => {
                 <h2 className="text-outline text-3xl absolute left-4 tracking-wider">My Story</h2>
                 <p className = "relative h-5/6 w-full text-pretty text-white font-semibold flex flex-col flex-wrap gap-4 pt-12 px-5 border-solid rounded-lg md:rounded-xl border-b-2 xl:border-b-0 xl:border-r-2 pb-10 xl:pb-0">
                     {myStorySummary}
-                    <span id = "story-read-more" className="text-[var(--yellow-color)] cursor-pointer" onClick={() => setClosedModal(false)}>Read More</span>
+                    <span id = "story-read-more" className="text-[var(--yellow-color)] cursor-pointer" onClick={openModal}>Read More</span>
                 </p>
             </div>
             <Skills/>
-            { !closedModal &&
-                <Modal screenType = "small" title = "My Story" colorTheme = "yellow" content = {myStory} setClosedModal={setClosedModal}/>
-            }
+            <Modal screenType = "small" title = "My Story" colorTheme = "yellow" content = {myStory} closeModal={closeModal}/>
         </div>
     </div>
   )

@@ -1,28 +1,28 @@
 import React from 'react'
 import styles from '../css/navbar.module.css'
 const Navbar = () => {
+  let about;
+  let skills;
+  let projects;
+  let footer;
+  setTimeout(() => {
+    about = document.querySelector("#about")
+    skills = document.querySelector("#skills")
+    projects = document.querySelector("#projects")
+    footer = document.querySelector("#footer")
+  }, 100)
+  const handleNavClick = (element, offset) => {
+    window.scrollTo(0, element.offsetTop + (offset? offset:0));
+  }
   return (
     <div className = "h-40 w-screen z-40 absolute">
       <div className = "h-full container m-auto flex justify-between items-start mt-8">
-        {/* <div id = "logo" className={`h-full w-4/12 flex justify-center items-center font-bold ${styles.navbarLogo}`}>
-          <span className = "tracking-wider text-2xl text-brighter-green-color translate-y-0.5">Eslam </span>
-          <span className = "tracking-widest text-5xl m-2">EO</span>
-          <span className = "tracking-wider text-2xl text-brighter-green-color translate-y-0.5"> Onsy</span>
-        </div> */}
         <div id = "nav-list" className = "text-white tracking-widest grow">
           <ul className="flex justify-center text-sm sm:text-xl font-bold gap-6 sm:gap-14">
-            <li id = "aboutLink">
-              <a href = "#about">About</a>
-            </li>
-            <li id = "skillsLink">
-              <a href = "#skills">Skills</a>
-            </li>
-            <li id = "projectsLink">
-              <a href = "#projects">Projects</a>
-            </li>
-            <li id = "contactLink">
-              <a href = "#contact-me">Contact Me</a>
-            </li>
+            <li onClick={()=>{handleNavClick(about)}} id = "aboutLink" className = "cursor-pointer"> About </li>
+            <li onClick={()=>{handleNavClick(skills, -150)}} id = "skillsLink" className = "cursor-pointer"> Skills </li>
+            <li onClick={()=>{handleNavClick(projects, -110)}} id = "projectsLink" className = "cursor-pointer"> Projects </li>
+            <li onClick={()=>{handleNavClick(footer)}} id = "contactLink" className = "cursor-pointer"> Contact Me </li>
           </ul>
         </div>
       </div>

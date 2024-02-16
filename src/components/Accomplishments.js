@@ -19,7 +19,7 @@ const Accomplishments = () => {
   const [pageLoaded, setPageLoaded] = useState(false);
   useEffect(() => {
     if(!pageLoaded){
-        setTimeout(() => setPageLoaded(true), 10);
+        setTimeout(() => setPageLoaded(true), 300);
         return;
     }
 
@@ -52,7 +52,7 @@ const Accomplishments = () => {
     })
     })
   return (
-    <div id = "accomplishments" ref = {container} className="my-[60vh] py-20 mb-96 w-[100vw] flex gap-32 unwrap overflow-x-hidden items-center bg-darker-color">
+    <div id = "accomplishments" ref = {container} className="my-[60vh] py-20 mb-96 w-[100vw] flex gap-32 unwrap overflow-x-hidden items-center">
         <section className="animate-text-block w-[350px] xl:w-[720px] md:w-[720px] p-5 flex flex-col items-start text-left">
           <div className="inner h-96 xl:h-[420px] w-[350px] xl:w-[720px] green text-center text-[var(--green-color)] font-bold text-2xl">
               <h1 className = "text-outline mr-32 text-3xl md:text-4xl xl:text-5xl w-full h-full flex items-center justify-center">MY ACCOMPLISHMENTS</h1>

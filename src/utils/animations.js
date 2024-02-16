@@ -1,4 +1,4 @@
-import { technicalSkills, softSkills } from "./skillsData";
+import { technicalSkills } from "./skillsData";
 import { gsap } from "gsap";    
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -92,4 +92,14 @@ setTimeout(()=>{
         })
     })
 
-}, 100);
+    /* ----- FAREWELL SECTION ANIMATIONS ----- */
+    let farewellTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#farewell",
+            start: "top -200%",
+        }
+    })
+
+    farewellTimeline.fromTo("#farewell h1", {y: 50, autoAlpha: 0}, {y: 0, autoAlpha: 1, duration: 1});
+    farewellTimeline.fromTo("#farewell #words", {y: 50, autoAlpha: 0}, {y: 0, autoAlpha: 1, duration: 0.5});
+}, 200);
